@@ -1,4 +1,7 @@
 lazy val V = _root_.scalafix.sbt.BuildInfo
+
+crossScalaVersions := List("2.12.6", "2.11.12")
+
 inThisBuild(
   List(
     organization := "com.example",
@@ -51,3 +54,17 @@ lazy val tests = project
   )
   .dependsOn(rules)
   .enablePlugins(ScalafixTestkitPlugin)
+
+
+inThisBuild(List(
+  organization := "com.github.takayahilton",
+  licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
+  developers := List(
+    Developer(
+      "com.github.takayahilton",
+      "takaya hilton",
+      "takayahilton@gmail.com",
+      url("https://github.com/takayahilton/scalafix-remove-unused-default-argument")
+    )
+  )
+))
