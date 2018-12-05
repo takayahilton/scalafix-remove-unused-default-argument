@@ -1,21 +1,19 @@
 lazy val V = _root_.scalafix.sbt.BuildInfo
 
-crossScalaVersions := List("2.12.6", "2.11.12")
-
 inThisBuild(
   List(
-    organization := "com.example",
-    homepage := Some(url("https://github.com/com/example")),
+    organization := "com.github.takayahilton",
     licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
     developers := List(
       Developer(
-        "example-username",
-        "Example Full Name",
-        "example@email.com",
-        url("https://example.com")
+        "com.github.takayahilton",
+        "takaya hilton",
+        "takayahilton@gmail.com",
+        url("https://github.com/takayahilton/scalafix-remove-unused-default-argument")
       )
     ),
     scalaVersion := V.scala212,
+    crossScalaVersions := List(V.scala212, "2.11.12"),
     addCompilerPlugin(scalafixSemanticdb),
     scalacOptions ++= List(
       "-Yrangepos",
@@ -54,17 +52,3 @@ lazy val tests = project
   )
   .dependsOn(rules)
   .enablePlugins(ScalafixTestkitPlugin)
-
-
-inThisBuild(List(
-  organization := "com.github.takayahilton",
-  licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
-  developers := List(
-    Developer(
-      "com.github.takayahilton",
-      "takaya hilton",
-      "takayahilton@gmail.com",
-      url("https://github.com/takayahilton/scalafix-remove-unused-default-argument")
-    )
-  )
-))
