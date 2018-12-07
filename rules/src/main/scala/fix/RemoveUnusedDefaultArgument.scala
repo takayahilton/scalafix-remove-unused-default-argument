@@ -29,6 +29,8 @@ class RemoveUnusedDefaultArgument extends SemanticRule("RemoveUnusedDefaultArgum
     doc.diagnostics.foreach { diagnostic =>
       if (diagnostic.message.startsWith("private default argument") && diagnostic.message.endsWith("is never used")) {
         isUnusedUnusedDefaultArgument += diagnostic.position
+      } else if(diagnostic.message.startsWith("local default argument") && diagnostic.message.endsWith("is never used")) {
+        isUnusedUnusedDefaultArgument += diagnostic.position
       }
     }
 
